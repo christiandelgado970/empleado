@@ -106,33 +106,43 @@ class Test {
 	}
 	@org.junit.jupiter.api.Test
 	void testCalculaNominabrutaHorasExtraPositiva() {
-		fail("Not yet implemented");
+		horas = 10;
+		
+		valorEsperado = 2300;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
 	void testCalculaNominabrutaHorasExtraNegativa() {
-		fail("Not yet implemented");
+		horas = -10;
+		
+		valorEsperado = 2000;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
 	}
 	
 	//Calculo de NominaNeta
 	
 	@org.junit.jupiter.api.Test
-	void testCalculoNominaNetaPositivo() {
+	void testCalculoNominanetaPositivo() {
 		fail("Not yet implemented");
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculoNominaNetaNegativo() {
+	void testCalculoNominanetaNegativo() {
 		fail("Not yet implemented");
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculoNominaNetaMenor2100() {
+	void testCalculoNominanetaMenor2100() {
 		fail("Not yet implemented");
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculoNominaNeta2100a2500() {
+	void testCalculoNominaneta2100a2500() {
 		fail("Not yet implemented");
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculoNominaNetaMayor2500() {
+	void testCalculoNominanetaMayor2500() {
 		fail("Not yet implemented");
 	}
 	

@@ -35,7 +35,10 @@ public class empleado {
 		
 		
 		//Horas extra
-		salario = salario + hExtraValor * horasExtra;
+		if( horasExtra > 0)
+		{
+			salario = salario + hExtraValor * horasExtra;
+		}
 		
 		return salario;
 	}
