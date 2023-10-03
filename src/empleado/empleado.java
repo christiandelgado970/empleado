@@ -2,12 +2,13 @@ package empleado;
 
 public class empleado {
 
-	private float salario = 2000;
-	private float salarioNeto = 2000;
-	private float hExtraValor = 30;
+	private static float salario = 2000;
+	private static float salarioNeto = 2000;
+	private static float hExtraValor = 30;
 	
-	public float calculanominabruta(TipoEmpleado tipo, float ventasMes, float horasExtra)
+	public static float calculanominabruta(TipoEmpleado tipo, float ventasMes, float horasExtra)
 	{
+		
 		//Tipo de empleado
 		if(tipo == TipoEmpleado.encargado)
 		{
@@ -28,15 +29,12 @@ public class empleado {
 		return salario;
 	}
 	
-	float calculoNominaNeta(float nominaBruta)
+	public static float calculoNominaNeta(float nominaBruta)
 	{
 		//Sin Comisión
-		if (salario < 2100)
-		{
-			salarioNeto = salario;
-		}
+	    salarioNeto = salario;
 		//Comision 15%
-		else if (salario >= 2100 && salario < 2500)
+		if (salario >= 2100 && salario < 2500)
 		{
 			salarioNeto = salario * (float) 0.85;
 		}

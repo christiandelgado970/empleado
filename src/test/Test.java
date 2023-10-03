@@ -7,8 +7,20 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+import empleado.*;
+
 class Test {
 
+	//test encargado,vendedor,otro, 1 test positivo y otro negativo
+	
+	TipoEmpleado tipoaux;
+	float horas;
+	float ventas;
+	float salarioaux;
+	
+	float salida;
+	float valorEsperado;
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -24,15 +36,79 @@ class Test {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
-	@org.junit.jupiter.api.Test
-	void testCalculanominabruta() {
+	
+	//Calculo Nomina Bruta
+	
+	void testCalculanominabrutaVendedor() {
+		
+		horas = 0;
+		ventas = 0;
+		tipoaux = TipoEmpleado.vendedor;
+		
+		valorEsperado = 2000;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
+	}
+	
+	void testCalculanominabrutaEncargado() {
+		fail("Not yet implemented");
+	}
+	
+	void testCalculanominabrutaOtro() {
 		fail("Not yet implemented");
 	}
 
-	@org.junit.jupiter.api.Test
-	void testCalculoNominaNeta() {
+	void testCalculanominabrutaMenor0() {
 		fail("Not yet implemented");
 	}
+
+	void testCalculanominabrutaMenor1000() {
+		fail("Not yet implemented");
+	}
+
+	void testCalculanominabrutaMayor1000() {
+		fail("Not yet implemented");
+	}
+
+	void testCalculanominabrutaMenor1500() {
+		fail("Not yet implemented");
+	}
+
+	void testCalculanominabrutaMayor1500() {
+		fail("Not yet implemented");
+	}
+
+	void testCalculanominabrutaHorasExtraPositiva() {
+		fail("Not yet implemented");
+	}
+
+	void testCalculanominabrutaHorasExtraNegativa() {
+		fail("Not yet implemented");
+	}
+	
+	//Calculo de NominaNeta
+	
+	@org.junit.jupiter.api.Test
+	void testCalculoNominaNetaPositivo() {
+		fail("Not yet implemented");
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculoNominaNetaNegativo() {
+		fail("Not yet implemented");
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculoNominaNetaMenor2100() {
+		fail("Not yet implemented");
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculoNominaNeta2100a2500() {
+		fail("Not yet implemented");
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculoNominaNetaMayor2500() {
+		fail("Not yet implemented");
+	}
+	
 
 }
