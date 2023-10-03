@@ -23,6 +23,7 @@ class Test {
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		
 	}
 
 	@AfterAll
@@ -127,11 +128,21 @@ class Test {
 	
 	@org.junit.jupiter.api.Test
 	void testCalculoNominanetaPositivo() {
-		fail("Not yet implemented");
+		salarioaux = 2000;
+		
+		valorEsperado = 2000;
+		salida = empleado.calculoNominaNeta(salarioaux);
+		
+		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
 	void testCalculoNominanetaNegativo() {
-		fail("Not yet implemented");
+		salarioaux = -2000;
+		
+		valorEsperado = -1;
+		salida = empleado.calculoNominaNeta(salarioaux);
+		
+		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
 	void testCalculoNominanetaMenor2100() {
