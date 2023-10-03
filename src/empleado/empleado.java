@@ -22,8 +22,9 @@ public class empleado {
 		{
 			salario = -1;
 		}
+		
 		//Cantidad de ventas
-		if(ventasMes >= 1000)
+		if(ventasMes >= 1000 && ventasMes < 1500)
 		{
 			salario = salario + 100;
 		}
@@ -31,6 +32,8 @@ public class empleado {
 		{
 			salario = salario + 200;
 		}
+		
+		
 		//Horas extra
 		salario = salario + hExtraValor * horasExtra;
 		

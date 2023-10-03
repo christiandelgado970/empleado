@@ -31,6 +31,9 @@ class Test {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		horas = 0;
+		ventas = 0;
+		tipoaux = TipoEmpleado.vendedor;
 	}
 
 	@AfterEach
@@ -38,11 +41,9 @@ class Test {
 	}
 	
 	//Calculo Nomina Bruta
+	
 	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaVendedor() {
-		horas = 0;
-		ventas = 0;
-		tipoaux = TipoEmpleado.vendedor;
+	void testCalculaNominabrutaVendedor() {
 		
 		valorEsperado = 2000;
 		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
@@ -50,9 +51,7 @@ class Test {
 		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaEncargado() {
-		horas = 0;
-		ventas = 0;
+	void testCalculaNominabrutaEncargado() {
 		tipoaux = TipoEmpleado.encargado;
 		
 		valorEsperado = 2500;
@@ -61,35 +60,56 @@ class Test {
 		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaOtro() {
+	void testCalculaNominabrutaOtro() {
+		tipoaux = TipoEmpleado.otro;
+		
+		valorEsperado = -1;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculaNominabrutaMenor0() {
+		ventas = -200;
+		
+		valorEsperado = 2000;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculaNominabrutaMenor1000() {
+		ventas = 800;
+		
+		valorEsperado = 2000;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculaNominabrutaMayoroIgual1000Menor1500() {
+		ventas = 1400;
+		
+		valorEsperado = 2100;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculaNominabrutaMayoroIgual1500() {
+		ventas = 1600;
+		
+		valorEsperado = 2200;
+		salida = empleado.calculanominabruta(tipoaux,ventas,horas);
+		
+		assertEquals(valorEsperado, salida);
+	}
+	@org.junit.jupiter.api.Test
+	void testCalculaNominabrutaHorasExtraPositiva() {
 		fail("Not yet implemented");
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaMenor0() {
-		fail("Not yet implemented");
-	}
-	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaMenor1000() {
-		fail("Not yet implemented");
-	}
-	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaMayor1000() {
-		fail("Not yet implemented");
-	}
-	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaMenor1500() {
-		fail("Not yet implemented");
-	}
-	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaMayor1500() {
-		fail("Not yet implemented");
-	}
-	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaHorasExtraPositiva() {
-		fail("Not yet implemented");
-	}
-	@org.junit.jupiter.api.Test
-	void testCalculanominabrutaHorasExtraNegativa() {
+	void testCalculaNominabrutaHorasExtraNegativa() {
 		fail("Not yet implemented");
 	}
 	
