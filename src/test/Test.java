@@ -127,15 +127,6 @@ class Test {
 	//Calculo de NominaNeta
 	
 	@org.junit.jupiter.api.Test
-	void testCalculoNominanetaPositivo() {
-		salarioaux = 2000;
-		
-		valorEsperado = 2000;
-		salida = empleado.calculoNominaNeta(salarioaux);
-		
-		assertEquals(valorEsperado, salida);
-	}
-	@org.junit.jupiter.api.Test
 	void testCalculoNominanetaNegativo() {
 		salarioaux = -2000;
 		
@@ -145,7 +136,7 @@ class Test {
 		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculoNominanetaMenor2100() {//esta prueba podría ser redundante, el positivo da lo mismo
+	void testCalculoNominanetaMenor2100() {
 		salarioaux = 2000;
 		
 		valorEsperado = 2000;
