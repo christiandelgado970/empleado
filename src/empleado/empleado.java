@@ -14,6 +14,14 @@ public class empleado {
 		{
 			salario = 2500;
 		}
+		else if(tipo == TipoEmpleado.vendedor)
+		{
+			salario = 2000;
+		}
+		else
+		{
+			salario = -1;
+		}
 		//Cantidad de ventas
 		if(ventasMes >= 1000)
 		{
