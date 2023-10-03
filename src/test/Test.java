@@ -145,16 +145,31 @@ class Test {
 		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
-	void testCalculoNominanetaMenor2100() {
-		fail("Not yet implemented");
+	void testCalculoNominanetaMenor2100() {//esta prueba podría ser redundante, el positivo da lo mismo
+		salarioaux = 2000;
+		
+		valorEsperado = 2000;
+		salida = empleado.calculoNominaNeta(salarioaux);
+		
+		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
 	void testCalculoNominaneta2100a2500() {
-		fail("Not yet implemented");
+		salarioaux = 2200;
+		
+		valorEsperado = 2200 * (float) 0.85;
+		salida = empleado.calculoNominaNeta(salarioaux);
+		
+		assertEquals(valorEsperado, salida);
 	}
 	@org.junit.jupiter.api.Test
 	void testCalculoNominanetaMayor2500() {
-		fail("Not yet implemented");
+		salarioaux = 2600;
+		
+		valorEsperado = 2600 * (float) 0.82;
+		salida = empleado.calculoNominaNeta(salarioaux);
+		
+		assertEquals(valorEsperado, salida);
 	}
 	
 
